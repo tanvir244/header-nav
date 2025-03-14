@@ -1,0 +1,108 @@
+{% schema %}
+  {
+    "name": "Rich Text",
+    "tag": "section",
+    "class": "richtext",
+    "limit": 2,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Slideshow"
+      },
+      {
+        "type": "select",
+        "id": "vertical_alignment",
+        "label": "Vertical alignment",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          }, {
+            "value": "middle",
+            "label": "Middle"
+          }, {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "middle"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "scheme_1",
+        "label": "Color scheme"
+      },
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Make Section full-width"
+      }, {
+        "type": "header",
+        "content": "Section Padding"
+      }, {
+        "type": "range",
+        "id": "top_padding",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 16
+      }
+    ],
+    "max_blocks": 5,
+    "blocks": [
+      {
+        "name": "Slide",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Rich Text",
+        "settings": {
+          "title": "Rich Text"
+        },
+        "blocks": [
+          {
+            "type": "slide"
+          }, {
+            "type": "slide"
+          }
+        ]
+      }
+    ],
+    "locales": {
+      "en": {
+        "title": "Slideshow"
+      },
+      "fr": {
+        "title": "Diaporama"
+      }
+    },
+    "enabled_on": {
+      "templates": ["*"],
+      "groups": ["footer"]
+    }
+  }
+{% endschema %}
